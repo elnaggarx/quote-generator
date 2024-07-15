@@ -1,7 +1,37 @@
 import './App.css';
 import React, {useState} from 'react';
-
+import {
+  EmailIcon,
+  EmailShareButton,
+  FacebookIcon,
+  FacebookMessengerIcon,
+  FacebookMessengerShareButton,
+  FacebookShareButton,
+  GabShareButton,
+  HatenaShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramIcon,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+  WorkplaceShareButton,
+  XIcon,
+} from "react-share";
 const App = () => {
+  const shareUrl = window.location.href;
   const url = "https://api.quotable.io/random";
   let quoteData = {
     content: "Let time be your only competitor.",
@@ -32,6 +62,27 @@ const App = () => {
         <div className="btns">
           <button onClick={copy} className="btn">Copy</button>
           <button onClick={generateQuote}>Generate Another Quote</button>
+
+          </div>
+          <div className='sm-buttons'>
+            <FacebookShareButton  url={url} hashtag={quote.author + " once said: " + quote.content}>
+              <FacebookIcon></FacebookIcon>
+            </FacebookShareButton>
+            <TwitterShareButton url={shareUrl} title={quote.author + " once said: " + quote.content}>
+              <XIcon></XIcon>
+            </TwitterShareButton>
+            <WhatsappShareButton url={shareUrl} title={quote.author + " once said: " + quote.content}>
+              <WhatsappIcon></WhatsappIcon>
+            </WhatsappShareButton>
+            <TelegramShareButton url={shareUrl} title={quote.author + " once said: " + quote.content}>
+              <TelegramIcon></TelegramIcon>
+            </TelegramShareButton>
+            
+            <EmailShareButton subject={quote.author + " once said : "} body={quote.content} url={shareUrl}>
+              <EmailIcon ></EmailIcon>
+            </EmailShareButton>
+
+
         </div>
       </div>
     </>

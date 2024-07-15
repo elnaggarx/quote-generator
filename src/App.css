@@ -79,3 +79,9 @@ h1{
     grid-column: 2/4;
     grid-row: 1;
 }
+.sm-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2%;
+}
